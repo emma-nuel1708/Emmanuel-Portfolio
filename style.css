@@ -1,0 +1,681 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Grotsek: Host Grotesk, sans-serif;
+  --Poppins: Poppins sans-serif;
+  --Fira-Code: Fira Code monospace;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #1e1e1e;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto 70px;
+  padding-top: 30px;
+  transition: 1s ease;
+}
+header .logo {
+  text-decoration: none;
+  display: flex;
+}
+header h5 {
+  font-size: 25px;
+  font-weight: 800;
+  color: #fff;
+  font-family: var(--Grotsek);
+  cursor: pointer;
+}
+header nav {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+header nav a {
+  font-size: 16px;
+  font-family: var(--Grotsek);
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  position: relative;
+  cursor: pointer;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2.6px;
+  width: 0;
+  background: rgb(201, 157, 99);
+  border-radius: 80px;
+  transition: width 0.5s ease;
+}
+header nav a:hover::after {
+  width: 100%;
+}
+.hamburger {
+  display: none;
+}
+
+/* Hero Section */
+
+#hero {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: 1s ease;
+}
+#hero .hero-text {
+  width: 65%;
+}
+#hero .hero-text h1 {
+  font-size: 3vw;
+  font-weight: 600;
+  font-family: var(--Grotsek);
+  line-height: 1.3;
+  text-decoration: none;
+  color: #fff;
+  /* padding-right: 39px; */
+  margin-bottom: 18px;
+}
+#hero .hero-text h1 span {
+  color: rgb(201, 157, 99);
+}
+#hero .hero-text p {
+  font-family: var(--Grotsek);
+  color: gray;
+  margin-bottom: 20px;
+}
+#hero .hero-text #link,
+#contact #contact-form button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: var(--Poppins);
+  padding: 7px 10px;
+  background-color: rgb(201, 157, 99);
+  border: 1px solid rgb(201, 157, 99);
+  color: #fff;
+  transition: 1s ease;
+}
+#hero .hero-text #link:hover,
+#contact #contact-form button:hover {
+  border: 1px solid rgb(201, 157, 99);
+  background: none;
+  font-weight: 700;
+}
+
+#hero .hero-image {
+  width: 40%;
+}
+#hero .hero-image img {
+  width: 100%;
+  border-radius: 45%;
+  box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
+  animation: float 2.5s infinite ease-in-out;
+}
+
+/* Quote Section */
+
+.quote {
+  width: 40%;
+  margin: 70px auto 80px;
+  animation: float2 3s infinite ease-in-out;
+}
+.quote-head {
+  border: 1px dashed gray;
+  padding: 15px 40px;
+  text-align: center;
+}
+.quote-head h3 {
+  font-size: 1.16vw;
+  font-weight: 200;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+}
+.quote-foot {
+  border: 1px dashed gray;
+  border-top: none;
+  width: fit-content;
+  padding: 7px 12px;
+  margin-left: auto;
+}
+.quote-foot h3 {
+  color: #fff;
+  font-size: 1.14vw;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+/* About Section */
+
+.head-text {
+  width: 90%;
+  margin-left: auto;
+}
+.head-text span {
+  color: rgb(201, 157, 99);
+}
+.head-text h3 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+#about {
+  width: 80%;
+  margin: 0 auto 70px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  transition: 1s ease;
+}
+#about .about-text {
+  width: 50%;
+  transition: 1s ease;
+  z-index: 1;
+}
+#about .about-text .p1 {
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 60px;
+  letter-spacing: 4px;
+  transition: 1s ease;
+}
+#about .about-text .p1 span {
+  color: rgb(201, 157, 99);
+}
+#about .about-text .p2 {
+  margin-bottom: 40px;
+  letter-spacing: 4px;
+  transition: 1s ease;
+}
+#about .about-text .p2,
+#about .about-text .p3 {
+  font-size: 1.5vw;
+  color: #fff;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  transition: 1s ease;
+}
+#about .about-image {
+  width: 40%;
+  margin-left: auto;
+  transition: 1s ease;
+}
+#about .about-image img {
+  width: 95%;
+  border-bottom: 2px double rgb(201, 157, 99);
+  animation: float3 3.5s infinite ease-in-out;
+  transition: 1s ease;
+}
+
+/* Projects Section */
+
+#projects {
+  margin-bottom: 60px;
+  width: 80%;
+  margin: 0 auto 50px;
+}
+.project-text {
+  margin-bottom: 40px;
+}
+.project-text h3 span {
+  color: rgb(201, 157, 99);
+}
+.project-text h3 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+#projects .project1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+#projects .project1 .project1a,
+#projects .project1 .project1b {
+  width: 49%;
+  justify-content: space-between;
+}
+#projects .project1 .project1a .image,
+#projects .project1 .project1b .image {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 10px;
+}
+.project1a img,
+.project1b img {
+  width: 100%;
+}
+.project1a h3,
+.project1b h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Space Grotesk";
+  font-size: 2vw;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.project1a p,
+.project1b p {
+  color: grey;
+  text-transform: uppercase;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+  font-weight: 500;
+}
+#projects .project2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#projects .project2 .project2a,
+#projects .project2 .project2b {
+  width: 49%;
+  justify-content: space-between;
+}
+#projects .project2 .project2a .image,
+#projects .project2 .project2b .image {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 10px;
+}
+.project2a h3,
+.project2b h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Space Grotesk";
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.project2a p,
+.project2b p {
+  color: grey;
+  text-transform: uppercase;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+  font-weight: 500;
+}
+.project2a img,
+.project2b img {
+  width: 100%;
+}
+
+.overlay1a,
+.overlay1b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background-color: rgba(10, 10, 10, 0.7); /* dim effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.overlay2a,
+.overlay2b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background-color: rgba(10, 10, 10, 0.7); /* dim effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.btn,
+.btn1b,
+.btn2a,
+.btn2b {
+  color: white;
+  font-weight: 700;
+  font-family: "Space Grotesk";
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  border-bottom: 4px solid rgb(201, 157, 99);
+  padding: 5px 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+.project1a:hover .btn,
+.project1b:hover .btn1b,
+.project2a:hover .btn2a,
+.project2b:hover .btn2b {
+  opacity: 1;
+  transform: translateY(0);
+}
+.overlay1a a:hover,
+.overlay1b a:hover,
+.overlay2a a:hover,
+.overlay2b a:hover {
+  color: rgb(201, 157, 99);
+}
+.project1a:hover .overlay1a,
+.project1b:hover .overlay1b,
+.project2a:hover .overlay2a,
+.project2b:hover .overlay2b {
+  opacity: 1;
+  pointer-events: auto;
+}
+.project1a:hover .btn,
+.project1b:hover .btn1b {
+  opacity: 1;
+  transform: translateY(0);
+}
+.overlay1a a:nth-child(1),
+.overlay1b a:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.overlay1a a:nth-child(2),
+.overlay1b a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.mobile-overlay {
+  display: none;
+}
+/* Contact Section */
+
+#contact {
+  width: 80%;
+  margin: 0 auto 70px;
+}
+#contact h3 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  margin-bottom: 40px;
+}
+#contact h3 span {
+  color: rgb(201, 157, 99);
+}
+#contact #contact-form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#contact #contact-form input {
+  width: 100%;
+  padding: 10px 30px;
+  background-color: #1e1e1e;
+  border: 1px dashed #fff;
+  margin-bottom: 25px;
+  color: gray;
+}
+#contact #contact-form textarea {
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+#contact #contact-form button {
+  width: fit-content;
+  padding: 9px 40px;
+  margin-left: auto;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  animation: float 1.5s infinite ease-in-out;
+
+  transform: translateY(100px); /* initially offscreen */
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.4s ease;
+}
+
+.scroll-to-top.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+footer {
+  padding: 20px;
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+}
+footer .link {
+  margin-bottom: 10px;
+}
+footer .link a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: white;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float2 {
+  0% {
+    transform: translatex(0);
+  }
+  50% {
+    transform: translatex(-15px);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
+@keyframes float3 {
+  0% {
+    transform: translatex(0);
+  }
+  50% {
+    transform: translatex(20px);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    width: 90%;
+  }
+  #hero {
+    width: 90%;
+  }
+  #hero .hero-text {
+    width: 55%;
+  }
+  #hero .hero-image {
+    width: 50%;
+  }
+  #hero .hero-image img {
+    border-radius: 30%;
+  }
+  .quote {
+    width: 60%;
+  }
+  .quote-head h3 {
+    font-size: large;
+  }
+  .head-text {
+    width: 95%;
+    margin-bottom: 40px;
+  }
+  #about {
+    width: 90%;
+  }
+  #projects {
+    width: 90%;
+  }
+  #contact {
+    width: 90%;
+  }
+  #contact #contact-form {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .nav-links {
+    /* display: none; */
+    position: absolute;
+    margin-top: 40px;
+    /* height: 100%; */
+    width: 80%;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(201, 157, 99);
+    border-radius: 7px;
+    opacity: 0.97;
+    border: 1px solid white;
+    padding: 40px 0;
+    /* border: 2px solid rgb(32, 29, 29) ; */
+  }
+  .nav-links .show {
+    display: flex;
+  }
+  header nav a {
+    font-size: 25px;
+  }
+  .hamburger {
+    display: block;
+  }
+  #hero {
+    flex-direction: column-reverse;
+    /* width: 98%; */
+  }
+  #hero .hero-text {
+    width: 100%;
+    text-align: center;
+  }
+  #hero .hero-text h1 {
+    font-size: 4.6vw;
+  }
+  #hero .hero-image {
+    width: 100%;
+  }
+  #hero .hero-image img {
+    border-radius: 8px;
+    animation: none;
+  }
+  .quote {
+    width: 80%;
+  }
+  .quote-foot h3 {
+    font-size: 12px;
+  }
+  .head-text h3 {
+    font-size: 6.5vw;
+  }
+  #about .about-text {
+    text-align: center;
+    width: 100%;
+  }
+  #about .about-text .p1 {
+    margin-bottom: 25px;
+    font-size: 30px;
+  }
+  #about .about-text .p2,
+  #about .about-text .p3 {
+    font-size: 2.7vw;
+  }
+  #about .about-image {
+    display: none;
+  }
+  #projects .project1,
+  #projects .project2 {
+    flex-direction: column;
+  }
+  #projects .project1 .project1a,
+  #projects .project2 .project2a {
+    margin-bottom: 20px;
+  }
+  #projects .project1 .project1a,
+  #projects .project1 .project1b,
+  #projects .project2 .project2a,
+  #projects .project2 .project2b {
+    width: 100%;
+  }
+  .project1a h3,
+  .project1b h3,
+  .project2a h3,
+  .project2b h3 {
+    font-size: 3.5vw;
+  }
+
+  .overlay1a,
+  .overlay1b,
+  .overlay2a,
+  .overlay2b {
+    display: none;
+  }
+  .mobile-overlay {
+    display: block;
+    gap: 64px;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+  .mobile-overlay a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Space Grotesk";
+    font-size: 3.5vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+    /* padding-bottom: 8px; */
+    border-bottom: 4px solid rgb(201, 157, 99);
+    transition: 1s ease;
+    margin: 0 20px 0 0;
+  }
+}
