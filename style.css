@@ -272,7 +272,7 @@ header nav a:hover::after {
   color: #fff;
   text-transform: uppercase;
   font-family: "Space Grotesk";
-  font-size: 2vw;
+  font-size: 2.3vw;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -307,7 +307,7 @@ header nav a:hover::after {
   color: #fff;
   text-transform: uppercase;
   font-family: "Space Grotesk";
-  font-size: 24px;
+  font-size: 2.3vw;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -645,6 +645,7 @@ footer p {
   #projects .project2 .project2a,
   #projects .project2 .project2b {
     width: 100%;
+    height: fit-content;
   }
   .project1a h3,
   .project1b h3,
