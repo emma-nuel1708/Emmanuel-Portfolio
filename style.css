@@ -435,11 +435,13 @@ header nav a:hover::after {
   background-color: #1e1e1e;
   border: 1px dashed #fff;
   margin-bottom: 25px;
-  color: gray;
+  color: white;
 }
 #contact #contact-form textarea {
   margin-bottom: 20px;
   background-color: transparent;
+  padding: 9px 25px 0;
+  color: white;
 }
 #contact #contact-form button {
   width: fit-content;
@@ -459,11 +461,9 @@ header nav a:hover::after {
   cursor: pointer;
   z-index: 1000;
   animation: float 1.5s infinite ease-in-out;
-
   transform: translateY(100px); /* initially offscreen */
   opacity: 0;
   pointer-events: none;
-
   transition: all 0.4s ease;
 }
 
