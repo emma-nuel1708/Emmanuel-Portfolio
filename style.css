@@ -13,6 +13,7 @@ html {
 }
 body {
   background-color: #1e1e1e;
+  /* position: relative; */
 }
 header {
   display: flex;
@@ -65,7 +66,15 @@ header nav a:hover::after {
 .hamburger {
   display: none;
 }
-
+.close-btn {
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
 /* Hero Section */
 
 #hero {
@@ -272,7 +281,7 @@ header nav a:hover::after {
   color: #fff;
   text-transform: uppercase;
   font-family: "Space Grotesk";
-  font-size: 2.3vw;
+  font-size: 2vw;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -307,7 +316,7 @@ header nav a:hover::after {
   color: #fff;
   text-transform: uppercase;
   font-family: "Space Grotesk";
-  font-size: 2.3vw;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -435,13 +444,11 @@ header nav a:hover::after {
   background-color: #1e1e1e;
   border: 1px dashed #fff;
   margin-bottom: 25px;
-  color: white;
+  color: gray;
 }
 #contact #contact-form textarea {
   margin-bottom: 20px;
   background-color: transparent;
-  padding: 9px 25px 0;
-  color: white;
 }
 #contact #contact-form button {
   width: fit-content;
@@ -461,9 +468,11 @@ header nav a:hover::after {
   cursor: pointer;
   z-index: 1000;
   animation: float 1.5s infinite ease-in-out;
+
   transform: translateY(100px); /* initially offscreen */
   opacity: 0;
   pointer-events: none;
+
   transition: all 0.4s ease;
 }
 
@@ -565,30 +574,39 @@ footer p {
     width: 80%;
   }
 }
-@media screen and (max-width: 650px) {
-  .nav-links {
-    /* display: none; */
-    position: absolute;
-    margin-top: 40px;
-    /* height: 100%; */
-    width: 80%;
-    text-align: center;
-    flex-direction: column;
-    background-color: rgb(201, 157, 99);
-    border-radius: 7px;
-    opacity: 0.97;
-    border: 1px solid white;
-    padding: 40px 0;
-    /* border: 2px solid rgb(32, 29, 29) ; */
-  }
-  .nav-links .show {
-    display: flex;
-  }
-  header nav a {
-    font-size: 25px;
-  }
+@media screen and (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+  .close-btn {
+    display: block;
+  }
+  .navlinks {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -565px;
+    height: 100%;
+    width: 45%;
+    background: #111;
+    opacity: 0.9;
+    flex-direction: column;
+    gap: 20px;
+    padding: 70px 10px 0px;
+    transition: right 0.3s ease;
+    z-index: 1;
+  }
+  .navlinks a {
+    color: #111;
+    font-size: 2.5vw;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 12px 35px;
+    border-radius: 20px;
+    width: 95%;
+  }
+  .navlinks.show {
+    right: 0;
   }
   #hero {
     flex-direction: column-reverse;
@@ -645,7 +663,6 @@ footer p {
   #projects .project2 .project2a,
   #projects .project2 .project2b {
     width: 100%;
-    height: fit-content;
   }
   .project1a h3,
   .project1b h3,
@@ -678,5 +695,11 @@ footer p {
     border-bottom: 4px solid rgb(201, 157, 99);
     transition: 1s ease;
     margin: 0 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navlinks {
+    width: 60%;
   }
 }
