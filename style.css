@@ -646,6 +646,8 @@ footer p {
   #about .about-text .p2,
   #about .about-text .p3 {
     font-size: 2.7vw;
+    font-weight: 900;
+
   }
   #about .about-image {
     display: none;
