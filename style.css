@@ -444,11 +444,13 @@ header nav a:hover::after {
   background-color: #1e1e1e;
   border: 1px dashed #fff;
   margin-bottom: 25px;
-  color: gray;
+  color: #fff;
 }
 #contact #contact-form textarea {
   margin-bottom: 20px;
   background-color: transparent;
+  color: #fff;
+  padding: 10px 30px;
 }
 #contact #contact-form button {
   width: fit-content;
@@ -647,7 +649,6 @@ footer p {
   #about .about-text .p3 {
     font-size: 2.7vw;
     font-weight: 900;
-
   }
   #about .about-image {
     display: none;
