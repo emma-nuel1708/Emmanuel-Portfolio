@@ -34,39 +34,46 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Contact Form Submission
 const form = document.getElementById("contact-form");
-const successMessage = document.getElementById("success-message");
+const status = document.getElementById("form-status");
 
 form.addEventListener("submit", async function (event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+  // Collect form data
+  const formData = new FormData(form);
+  const data = {
+    Name: formData.get("name"),
+    Email: formData.get("email"),
+    Message: formData.get("message"),
+    Timestamp: new Date().toISOString(), // Add timestamp
+  };
 
-  if (!name || !email || !message) {
-    alert("Please fill out all fields.");
-    return;
-  }
+  // Clear previous status
+  status.textContent = "Sending...";
+  status.style.color = "#fff";
 
   try {
-    // Replace with your Google Apps Script Web App URL
-    const scriptURL = "https://script.google.com/macros/s/AKfycbz6W4vVox66PYOBKnfCI1vq0Gv0FD8o2ojzG3mNZtpZRN5uNDZj4QrcFXGE1lRTbLtsgw/exec";
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbzC-uYTqTolzHAmIerkC2dFHKi8zkFhiG4qmNRk09YusomojIyn-2wvtiYc4zUvOhyg/exec",
+      {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      }
+    );
 
-    const response = await fetch(scriptURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
-    });
-
-    if (response.ok) {
-      successMessage.style.display = "block";
-      form.reset();
-      setTimeout(() => (successMessage.style.display = "none"), 4000);
-    } else {
-      alert("Error: Could not send your message.");
-    }
+    // Since 'no-cors' doesn't allow reading response, assume success if no error
+    status.textContent = "Message sent successfully!";
+    status.style.color = "green";
+    form.reset(); // Reset form fields
   } catch (error) {
-    alert("Network error: " + error.message);
+    status.textContent = "Error sending message. Please try again.";
+    status.style.color = "red";
+    console.error("Error:", error);
   }
 });
