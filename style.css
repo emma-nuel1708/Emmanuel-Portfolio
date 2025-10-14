@@ -23,6 +23,22 @@ header {
   margin: 0 auto 70px;
   padding-top: 30px;
   transition: 1s ease;
+  position: relative;
+  z-index: 1000;
+}
+header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  background-color: #1e1e1e;
+  margin: 0 auto; /* Remove margin when fixed */
+}
+
+/* Prevent content from jumping under the fixed header */
+body.sticky-header {
+  padding-top: 80px; /* Adjust this value based on your header's height */
 }
 header .logo {
   text-decoration: none;
@@ -511,6 +527,30 @@ footer p {
   color: white;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project1a.fade-in {
+  transition-delay: 0.1s;
+}
+.project1b.fade-in {
+  transition-delay: 0.2s;
+}
+.project2a.fade-in {
+  transition-delay: 0.3s;
+}
+.project2b.fade-in {
+  transition-delay: 0.4s;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -548,6 +588,9 @@ footer p {
 @media screen and (max-width: 1024px) {
   header {
     width: 90%;
+  }
+  header nav a::after{
+    content: none;
   }
   #hero {
     width: 90%;
@@ -709,11 +752,4 @@ footer p {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .navlinks {
-    width: 60%;
-  }
-}
 
-@media screen and (max-width: 200px) {
-}

@@ -71,9 +71,49 @@ form.addEventListener("submit", async function (event) {
     status.textContent = "Message sent successfully!";
     status.style.color = "green";
     form.reset(); // Reset form fields
+
+    //Clear status message after 3 seconds
+    setTimeout(() => {
+      status.textContent = "";
+    }, 3000);
   } catch (error) {
     status.textContent = "Error sending message. Please try again.";
     status.style.color = "red";
     console.error("Error:", error);
   }
 });
+
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  const sticky = header.offsetTop;
+
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    document.body.classList.add("sticky-header");
+  } else {
+    header.classList.remove("sticky");
+    document.body.classList.remove("sticky-header");
+  }
+});
+
+// Scroll animation functionality
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.top <=
+      (window.innerHeight || document.documentElement.clientHeight) * 0.8
+  );
+}
+
+function handleScroll() {
+  const elements = document.querySelectorAll(".fade-in");
+  elements.forEach((element) => {
+    if (isInViewport(element) && !element.classList.contains("visible")) {
+      element.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScroll);
+document.addEventListener("DOMContentLoaded", handleScroll);
