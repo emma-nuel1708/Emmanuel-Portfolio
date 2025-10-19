@@ -589,7 +589,7 @@ footer p {
   header {
     width: 90%;
   }
-  header nav a::after{
+  header nav a::after {
     content: none;
   }
   #hero {
@@ -751,5 +751,3 @@ footer p {
     margin: 0 20px 0 0;
   }
 }
-
-
