@@ -82,6 +82,7 @@ header nav a:hover::after {
 }
 .hamburger {
   display: none;
+  cursor: pointer;
 }
 .close-btn {
   font-size: 2rem;
@@ -640,7 +641,7 @@ footer p {
     bottom: 0;
     right: -565px;
     height: 100%;
-    width: 55%;
+    width: 60%;
     background: #111;
     opacity: 0.9;
     flex-direction: column;
