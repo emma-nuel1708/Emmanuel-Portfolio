@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   closeBtn.addEventListener("click", function () {
-    navlinks.classList.remove("show");
+    navlinks.classList.remove("show");z
   });
 });
 
