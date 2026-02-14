@@ -148,7 +148,7 @@ header nav a:hover::after {
 }
 #hero .hero-image img {
   width: 100%;
-  border-radius: 70%;
+  border-radius: 45%;
   box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
   -webkit-box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: -4px 6px 11px 5px rgba(0, 0, 0, 0.57);
